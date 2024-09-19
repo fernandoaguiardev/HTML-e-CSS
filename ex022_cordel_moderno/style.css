@@ -51,7 +51,7 @@ header a:visited {
 }
 
 #img1 {
-    background-image: url('../_img/background001.jpg'); /* Define uma imagem de fundo */
+    background-image: url('background001.jpg'); /* Define uma imagem de fundo */
     height: 100vh; /* Define a altura como 100% da altura da viewport */
     background-size: cover; /* Faz a imagem cobrir todo o elemento */
     background-attachment: fixed; /* Imagem de fundo fixa em relação à viewport */
@@ -59,7 +59,7 @@ header a:visited {
 }
 
 #img2 {
-    background-image: url('../_img/background002.jpg'); /* Define outra imagem de fundo */
+    background-image: url('background002.jpg'); /* Define outra imagem de fundo */
     height: 100vh; /* Define a altura como 100% da altura da viewport */
     background-size: cover; /* Faz a imagem cobrir todo o elemento */
     background-attachment: fixed; /* Imagem de fundo fixa em relação à viewport */
