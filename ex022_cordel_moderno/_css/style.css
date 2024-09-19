@@ -43,6 +43,7 @@ header p {
 }
 
 header a {
+    color: white;
     text-decoration: none; /* Remove o sublinhado dos links */
 }
 header a:visited {
