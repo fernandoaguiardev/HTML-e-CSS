@@ -1,0 +1,66 @@
+@charset "UTF-8"; /* Define a codificação de caracteres como UTF-8 */
+
+/* Fontes usadas pelo Gustavo Guanabara */
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+/* Configurações globais */
+* {
+    margin: 0px; /* Remove margem de todos os elementos */
+    padding: 0px; /* Remove padding de todos os elementos */
+}
+
+/* Define fontes padrões de fonte para o projeto */
+:root {
+    --fonte1: Verdana, Geneva, Tahoma, sans-serif; /* Fonte padrão */
+    --fonte2: 'Sriracha', cursive; /* Fonte cursiva 1 */
+    --fonte3: 'Passion One', cursive; /* Fonte cursiva 2 */
+}
+
+html, body {
+    min-height: 100vh; /* Garante que a altura mínima da página seja 100% da altura da viewport */
+    background-color: darkgray; /* Define a cor de fundo como cinza escuro */
+    font-family: var(--fonte1); /* Aplica a fonte padrão ao body */
+}
+
+header {
+    color: white; /* Define a cor do texto no header como branco */
+    background: black; /* Define o fundo do header como preto */
+}
+
+header h1 {
+    text-align: center; /* Centraliza o texto do h1 */
+    padding-top: 50px; /* Adiciona 50px de padding no topo */
+    font-family: var(--fonte1); /* Aplica a fonte padrão */
+    font-variant: small-caps; /* Aplica variação de caixa pequena */
+    font-size: 7vw; /* Define o tamanho da fonte como 7% da largura da viewport */
+}
+
+header p {
+    padding: 15px; /* Adiciona 15px de padding ao parágrafo */
+    color: white; /* Define a cor do texto do parágrafo como branco */
+    text-align: center; /* Centraliza o texto do parágrafo */
+}
+
+header a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+}
+header a:visited {
+    color: white;
+}
+
+#img1 {
+    background-image: url('../_img/background001.jpg'); /* Define uma imagem de fundo */
+    height: 100vh; /* Define a altura como 100% da altura da viewport */
+    background-size: cover; /* Faz a imagem cobrir todo o elemento */
+    background-attachment: fixed; /* Imagem de fundo fixa em relação à viewport */
+    background-position: center center; /* Centraliza a imagem de fundo */
+}
+
+#img2 {
+    background-image: url('../_img/background002.jpg'); /* Define outra imagem de fundo */
+    height: 100vh; /* Define a altura como 100% da altura da viewport */
+    background-size: cover; /* Faz a imagem cobrir todo o elemento */
+    background-attachment: fixed; /* Imagem de fundo fixa em relação à viewport */
+    background-position: center center; /* Centraliza a imagem de fundo */
+}
