@@ -78,14 +78,14 @@ section.imagem{
 #img01{
     background-image: url('../imagens/background001.jpg');
     background-size: cover;
-    background-position: left center;
+    background-position: left top;
     background-attachment: fixed;
 }
 
 #img02{
     background-image: url('../imagens/background002.jpg');
     background-size: cover;
-    background-position: center bottom;
+    background-position: left top;
     background-attachment: fixed;
     
 }
