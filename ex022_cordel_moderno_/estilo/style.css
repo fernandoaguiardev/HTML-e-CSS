@@ -80,28 +80,31 @@ section.normal{
     padding-bottom: 30px;
     background-color: var(--tom01); /* Fundo claro */
     color: var(--tom06); /* Texto escuro */
+    box-shadow: inset 0px 0px 1px 1.7px rgba(0, 0, 0, 0.446);
 }
 
 section.imagem{
     /* Estilo específico para seções com a classe 'imagem' */
     background-color: var(--tom06); /* Fundo escuro */
     color: var(--tom07); /* Texto claro */
-}
-
-#img01{
-    /* Estilo da primeira seção com imagem de fundo */
-    background-image: url('../imagens/background001.jpg');
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.500);/*Sombra no texto*/
+    padding-left: 20px; /*Desloca para a direita para dar um efeito 3D*/
+    
+    /*Configurações comuns às duas imagens*/
     background-size: cover; /* Cobre toda a área */
     background-position: left top; /* Posição da imagem */
     background-attachment: fixed; /* A imagem fica fixa ao rolar a página */
 }
 
+#img01{
+    /* Estilo da primeira seção com imagem de fundo */
+    background-image: url('../imagens/background001.jpg');
+
+}
+
 #img02{
     /* Estilo da segunda seção com imagem de fundo */
     background-image: url('../imagens/background002.jpg');
-    background-size: cover;
-    background-position: left top;
-    background-attachment: fixed;
 }
 
 section.imagem > p {
