@@ -1,0 +1,112 @@
+@charset 'UTF-8';
+
+@import url('https://fonts.googleapis.com/css2?family=Farsan&family=Passion+One:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Farsan&display=swap');
+
+:root { 
+    --fonte1: 'Passion One', sans-serif;
+    --fonte2: 'Farsan', sans-serif;
+} 
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    min-height: 100vw;
+    background-color: var(--tom05);
+}
+
+/*Paleta de cores*/
+:root{
+    --tom01: 	#efe9d6;
+    --tom02:    #dfd3ad;
+    --tom03:    #a39b76;
+    --tom04:    #ad8759;
+    --tom05:    #473821;
+    --tom06:    #17120b; /*Tom extra que eu escolhi*/
+    --tom06_transparente: #17120bb0;
+    --tom07: 	#fffaea; /*Tom extra que eu escolhi*/
+}
+
+header{
+    background-color: var(--tom06);
+    color: var(--tom07);
+    text-align: center;
+    font-family: var(--fonte1);
+    font-variant: small-caps;
+}
+
+header > h1{
+    padding-top: 50px;
+    /*text-transform: uppercase;*/
+    font-size: 10vw;
+}
+
+header > p{
+    padding-bottom: 50px;
+    font-size: 20pt;    
+}
+
+a{
+    color: var(--tom02);
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+section{
+    padding: 70px 20px;
+    font-family: var(--fonte2);
+    font-size: 30pt;
+}
+
+section.normal{
+    background-color: var(--tom01);
+    color: var(--tom06);
+    
+}
+section.imagem{
+    background-color: var(--tom06);
+    color: var(--tom07);
+}
+#img01{
+    background-image: url('../imagens/background001.jpg');
+    background-size: cover;
+    background-position: left center;
+    background-attachment: fixed;
+}
+
+#img02{
+    background-image: url('../imagens/background002.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    background-attachment: fixed;
+    
+}
+
+section.imagem > p {
+    display: inline-block;
+    padding: 5px;
+    background-color: var(--tom06_transparente);
+    color: var(--tom07);
+}
+
+section.normal > p{
+    padding-bottom: 2em;
+}
+
+
+footer{
+    background-color: var(--tom06);
+    color: var(--tom07);
+    font-family: var(--fonte1);
+    font-variant: small-caps;
+    text-align: center;
+    padding: 10px;
+    font-size: 14pt;
+}
