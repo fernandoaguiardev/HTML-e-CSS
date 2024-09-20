@@ -1,101 +1,105 @@
 @charset "UTF-8"; /* Define a codificação de caracteres como UTF-8 */
 
-/* Fontes usadas pelo Gustavo Guanabara */
+/* Importa fontes usadas por Gustavo Guanabara */
 @import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 
 /* Configurações globais */
 * {
-    margin: 0px; /* Remove margem de todos os elementos */
-    padding: 0px; /* Remove padding de todos os elementos */
+    margin: 0px; /* Remove todas as margens de todos os elementos */
+    padding: 0px; /* Remove todo o padding de todos os elementos */
 }
 
-/* Define fontes padrões de fonte para o projeto */
+/* Define variáveis de fontes para serem usadas no projeto */
 :root {
     --fonte1: Verdana, Geneva, Tahoma, sans-serif; /* Fonte padrão */
-    --fonte2: 'Sriracha', cursive; /* Fonte cursiva 1 */
-    --fonte3: 'Passion One', cursive; /* Fonte cursiva 2 */
+    --fonte2: 'Sriracha', cursive; /* Fonte cursiva secundária */
+    --fonte3: 'Passion One', cursive; /* Fonte cursiva principal */
 }
 
 html, body {
     min-height: 100vh; /* Garante que a altura mínima da página seja 100% da altura da viewport */
-    background-color: darkgray; /* Define a cor de fundo como cinza escuro */
-    font-family: var(--fonte1); /* Aplica a fonte padrão ao body */
+    background-color: darkgray; /* Cor de fundo cinza escuro */
+    font-family: var(--fonte1); /* Usa a fonte padrão */
 }
 
 header {
-    color: white; /* Define a cor do texto no header como branco */
-    background: black; /* Define o fundo do header como preto */
+    color: white; /* Cor do texto do header: branco */
+    background: black; /* Fundo do header: preto */
 }
 
 header h1 {
-    text-align: center; /* Centraliza o texto do h1 */
-    padding-top: 50px; /* Adiciona 50px de padding no topo */
-    font-family: var(--fonte1); /* Aplica a fonte padrão */
-    font-variant: small-caps; /* Aplica variação de caixa pequena */
-    font-size: 7vw; /* Define o tamanho da fonte como 7% da largura da viewport */
+    text-align: center; /* Centraliza o texto do título */
+    padding-top: 50px; /* Espaçamento no topo do título */
+    font-family: var(--fonte1); /* Usa a fonte padrão */
+    font-variant: small-caps; /* Usa letras maiúsculas pequenas */
+    font-size: 7vw; /* Tamanho da fonte proporcional à largura da viewport */
 }
 
 header p, header a {
-    padding: 15px; /* Adiciona 15px de padding ao parágrafo */
-    color: white; /* Define a cor do texto do parágrafo como branco */
-    text-align: center; /* Centraliza o texto do parágrafo */
-    text-decoration: none; /* Remove o sublinhado dos links */
-    font-family: var(--fonte3);
-    font-size: 1.5vw; /* Define o tamanho da fonte como 7% da largura da viewport */
-
+    padding: 15px; /* Espaçamento interno de 15px */
+    color: white; /* Texto em branco */
+    text-align: center; /* Centraliza o texto */
+    text-decoration: none; /* Remove sublinhado dos links */
+    font-family: var(--fonte3); /* Usa a fonte principal */
+    font-size: 1.5vw; /* Tamanho da fonte proporcional à largura da viewport */
 }
+
 header a:visited {
-    color: white;
+    color: white; /* Cor do link visitado: branco */
 }
 
 #img1 {
-    background-image: url('background001.jpg'); /* Define uma imagem de fundo */
-    height: 120vh; /* Define a altura como 100% da altura da viewport */
-    background-size: cover; /* Faz a imagem cobrir todo o elemento */
-    background-attachment: fixed; /* Imagem de fundo fixa em relação à viewport */
-    background-position: center center; /* Centraliza a imagem de fundo */
+    background-image: url('background001.jpg'); /* Imagem de fundo */
+    height: 120vh; /* Altura de 120% da viewport */
+    background-size: cover; /* Imagem cobre toda a área */
+    background-attachment: fixed; /* Fundo fixo */
+    background-position: center center; /* Centraliza a imagem */
 }
+
 #img2 {
-    background-image: url('background002.jpg'); /* Define outra imagem de fundo */
-    height: 100vh; /* Define a altura como 100% da altura da viewport */
-    background-size: cover; /* Faz a imagem cobrir todo o elemento */
-    background-attachment: fixed; /* Imagem de fundo fixa em relação à viewport */
-    background-position: center center; /* Centraliza a imagem de fundo */
+    background-image: url('background002.jpg'); /* Outra imagem de fundo */
+    height: 100vh; /* Altura de 100% da viewport */
+    background-size: cover; /* Imagem cobre toda a área */
+    background-attachment: fixed; /* Fundo fixo */
+    background-position: center center; /* Centraliza a imagem */
 }
+
 .back_noimg {
-    background-color: rgb(255, 255, 255);
-    height: 120vh; /* Define a altura como 100% da altura da viewport */
-    background-size: cover; /* Faz a imagem cobrir todo o elemento */
-    background-attachment: fixed; /* Imagem de fundo fixa em relação à viewport */
-    background-position: center center; /* Centraliza a imagem de fundo */
+    background-color: rgb(255, 255, 255); /* Cor de fundo branca */
+    height: 120vh; /* Altura de 120% da viewport */
+    background-size: cover; /* Fundo cobre toda a área */
+    background-attachment: fixed; /* Fundo fixo */
+    background-position: center center; /* Centraliza o fundo */
 }
-.texto_normal{
-    color: rgb(0, 0, 0);
-    font-family: var(--fonte2);
-    font-size: 3.7vw;
-    max-width: 50vw;
-    padding-top: 110px;
-}
-.texto_imagem{
-    color: rgb(255, 255, 255);
-    font-family: var(--fonte2);
-    font-size: 3.5vw;
-    max-width: 50vw;
-    background-color: rgba(0, 0, 0, 0.350);
-    padding-top: 110px;
 
+.texto_normal {
+    color: rgb(0, 0, 0); /* Texto preto */
+    font-family: var(--fonte2); /* Usa a fonte cursiva secundária */
+    font-size: 3.7vw; /* Tamanho da fonte proporcional à largura da viewport */
+    max-width: 50vw; /* Largura máxima de 50% da viewport */
+    padding-top: 110px; /* Espaçamento no topo */
 }
-footer{
-    color: white;
-    background-color: black;
-    padding: 20px;
-    text-align: center;
 
+.texto_imagem {
+    color: rgb(255, 255, 255); /* Texto branco */
+    font-family: var(--fonte2); /* Usa a fonte cursiva secundária */
+    font-size: 3.5vw; /* Tamanho da fonte proporcional à largura da viewport */
+    max-width: 50vw; /* Largura máxima de 50% da viewport */
+    background-color: rgba(0, 0, 0, 0.350); /* Fundo semi-transparente preto */
+    padding-top: 110px; /* Espaçamento no topo */
 }
-footer a{
-    color: white;
-    font-family: var(--fonte3);
-    font-size: 1.2vw; /* Define o tamanho da fonte como 7% da largura da viewport */
-    text-decoration: none;
+
+footer {
+    color: white; /* Texto branco */
+    background-color: black; /* Fundo preto */
+    padding: 20px; /* Espaçamento interno de 20px */
+    text-align: center; /* Centraliza o texto */
+}
+
+footer a {
+    color: white; /* Links brancos */
+    font-family: var(--fonte3); /* Usa a fonte principal */
+    font-size: 1.2vw; /* Tamanho da fonte proporcional à largura da viewport */
+    text-decoration: none; /* Remove sublinhado dos links */
 }
