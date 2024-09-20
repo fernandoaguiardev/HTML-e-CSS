@@ -36,14 +36,10 @@ header h1 {
     font-size: 7vw; /* Define o tamanho da fonte como 7% da largura da viewport */
 }
 
-header p {
+header p, header a {
     padding: 15px; /* Adiciona 15px de padding ao parágrafo */
     color: white; /* Define a cor do texto do parágrafo como branco */
     text-align: center; /* Centraliza o texto do parágrafo */
-}
-
-header a {
-    color: white;
     text-decoration: none; /* Remove o sublinhado dos links */
 }
 header a:visited {
@@ -52,16 +48,38 @@ header a:visited {
 
 #img1 {
     background-image: url('background001.jpg'); /* Define uma imagem de fundo */
-    height: 100vh; /* Define a altura como 100% da altura da viewport */
+    height: 120vh; /* Define a altura como 100% da altura da viewport */
     background-size: cover; /* Faz a imagem cobrir todo o elemento */
     background-attachment: fixed; /* Imagem de fundo fixa em relação à viewport */
     background-position: center center; /* Centraliza a imagem de fundo */
 }
-
 #img2 {
     background-image: url('background002.jpg'); /* Define outra imagem de fundo */
     height: 100vh; /* Define a altura como 100% da altura da viewport */
     background-size: cover; /* Faz a imagem cobrir todo o elemento */
     background-attachment: fixed; /* Imagem de fundo fixa em relação à viewport */
     background-position: center center; /* Centraliza a imagem de fundo */
+}
+.back_noimg {
+    background-color: rgb(255, 255, 255);
+    height: 120vh; /* Define a altura como 100% da altura da viewport */
+    background-size: cover; /* Faz a imagem cobrir todo o elemento */
+    background-attachment: fixed; /* Imagem de fundo fixa em relação à viewport */
+    background-position: center center; /* Centraliza a imagem de fundo */
+}
+.texto_normal{
+    color: rgb(0, 0, 0);
+    font-family: var(--fonte2);
+    font-size: 3.7vw;
+    max-width: 50vw;
+    padding-top: 110px;
+}
+.texto_imagem{
+    color: rgb(255, 255, 255);
+    font-family: var(--fonte2);
+    font-size: 3.5vw;
+    max-width: 50vw;
+    background-color: rgba(0, 0, 0, 0.350);
+    padding-top: 110px;
+
 }
