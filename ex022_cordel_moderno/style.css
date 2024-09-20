@@ -41,6 +41,9 @@ header p, header a {
     color: white; /* Define a cor do texto do parágrafo como branco */
     text-align: center; /* Centraliza o texto do parágrafo */
     text-decoration: none; /* Remove o sublinhado dos links */
+    font-family: var(--fonte3);
+    font-size: 1.5vw; /* Define o tamanho da fonte como 7% da largura da viewport */
+
 }
 header a:visited {
     color: white;
@@ -82,4 +85,17 @@ header a:visited {
     background-color: rgba(0, 0, 0, 0.350);
     padding-top: 110px;
 
+}
+footer{
+    color: white;
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+
+}
+footer a{
+    color: white;
+    font-family: var(--fonte3);
+    font-size: 1.2vw; /* Define o tamanho da fonte como 7% da largura da viewport */
+    text-decoration: none;
 }
