@@ -4,4 +4,4 @@
  
  https://fernandoaguiardev.github.io/HTML-e-CSS/ex021_Desafio10_corrigido/#
 
-  https://fernandoaguiardev.github.io/HTML-e-CSS/ex022_cordel_moderno/#
+ https://fernandoaguiardev.github.io/HTML-e-CSS/ex022_cordel_moderno/#
