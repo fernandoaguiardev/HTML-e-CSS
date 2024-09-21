@@ -1,120 +1,119 @@
 <!DOCTYPE html>
-<html lang="pt-BR"> <!-- Define o tipo do documento e o idioma como português do Brasil -->
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade para dispositivos móveis -->
-    <title>População por Estado</title> <!-- Título da página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>População por Estado</title>
     <style>
-        /* Estilização básica do corpo */
+        /* Definindo estilo básico para o corpo da página */
         body {
-            font-family: 'Arial', sans-serif; /* Define a fonte do corpo */
-            text-align: center; /* Centraliza o texto */
-            background-color: #f4f4f9; /* Cor de fundo suave e clara */
+            font-family: 'Arial', sans-serif;
+            text-align: center; /* Centraliza o texto na página */
+            background-color: #cccccc; /* Cor de fundo da página */
             color: #333; /* Cor do texto */
         }
 
-        /* Estilização da tabela */
+        /* Estilização para a tabela */
         table {
-            width: 80%; /* Largura da tabela em porcentagem para responsividade */
-            max-width: 800px; /* Largura máxima */
-            border-collapse: collapse; /* Remove espaços entre bordas das células */
-            margin: 20px auto; /* Centraliza a tabela com margem superior */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            /* Remova a propriedade position: relative; pois ela pode interferir com o position: sticky */
+            width: 90%; /* Define que a tabela vai ocupar 90% da largura da página */
+            max-width: 900px; /* Limita a largura máxima a 900px */
+            border-collapse: collapse; /* Junta as bordas das células */
+            margin: 20px auto; /* Centraliza a tabela horizontalmente */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra ao redor da tabela */
             border-radius: 8px; /* Bordas arredondadas */
-            overflow: hidden; /* Oculta bordas externas */
+            overflow: hidden; /* Evita que o conteúdo da tabela transborde */
         }
 
-        /* Estilo do título da tabela (caption) */
+        /* Estilo do título da tabela */
         caption {
-            background-color: #6c63ff; /* Azul suave */
-            color: white; /* Cor do texto do caption */
-            font-weight: bold; /* Fonte em negrito */
+            background-color: #6c63ff; /* Cor de fundo do título */
+            color: white; /* Cor do texto */
+            font-weight: bold; /* Texto em negrito */
             padding: 10px; /* Espaçamento interno */
             font-size: 1.5rem; /* Tamanho da fonte */
             border-radius: 8px 8px 0 0; /* Bordas arredondadas no topo */
         }
 
-        /* Estilo para cabeçalho da tabela */
-        thead {
-            position: sticky; /* Permite o efeito de fixação */
-            top: 0; /* Posiciona no topo do contêiner */
-            background-color: #4b4b4b; /* Cor de fundo escura */
+        /* Estilo para a área do cabeçalho (thead) */
+        thead > tr > th{
+            position: sticky; /* Cabeçalho fixo ao rolar a página */
+            top: 0; /* Fica no topo */
+            background-color: #4b4b4b; /* Cor de fundo do cabeçalho */
             color: white; /* Cor do texto */
-            z-index: 10; /* Garante que o cabeçalho fique acima do conteúdo */
+            z-index: 1; /* Garante que o cabeçalho fique acima do conteúdo */
         }
 
-        /* Estilo das células */
+        /* Estilo das células da tabela (tanto th quanto td) */
         td, th {
-            border: 1px solid #ddd; /* Borda leve nas células */
+            border: 1px solid #ddd; /* Bordas das células */
             padding: 10px; /* Espaçamento interno das células */
         }
 
-        /* Estilo para o cabeçalho das colunas */
+        /* Estilo para as células do cabeçalho */
         th {
             font-size: 1rem; /* Tamanho da fonte do cabeçalho */
+            /* Adicione as seguintes propriedades para garantir que o sticky funcione corretamente */
+            position: sticky; /* Mantém o cabeçalho fixo */
+            top: 0; /* Posiciona no topo */
+            background-color: #4b4b4b; /* Cor de fundo do cabeçalho */
+            z-index: 2; /* Garante que os cabeçalhos fiquem acima das células do corpo */
         }
 
-        /* Estilo para células numéricas */
+        /* Alinhando à direita os números nas colunas de população */
         .numero {
-            text-align: right; /* Alinha texto à direita */
+            text-align: right;
         }
 
-        /* Estilo específico para a coluna de números */
-        #colnum {
-            background-color: #007BFF; /* Cor de fundo para a coluna de população */
-            color: white; /* Cor do texto */
-            width: 120px; /* Largura da coluna */
+        /* Definindo estilo para as linhas pares da tabela */
+        tbody > tr:nth-child(2n) {
+            background-color: #f2f2f2; /* Cor de fundo das linhas pares */
         }
 
-        /* Estilo para linhas pares na tabela */
-        tbody > tr:nth-child(2n) { /* Seleciona linhas pares */
-            background-color: #f2f2f2; /* Cor de fundo para linhas pares */
-        }
-
-        /* Efeito ao passar o mouse sobre as linhas */
+        /* Efeito ao passar o mouse sobre as linhas da tabela */
         tbody > tr:hover {
-            background-color: #e1e1e1; /* Cor de fundo ao passar o mouse */
+            background-color: #e1e1e1; /* Cor de fundo quando o mouse estiver sobre a linha */
         }
 
-        /* Limita a altura da tabela e adiciona rolagem */
+        /* Estilo para o corpo da tabela (tbody) */
         tbody {
-            display: block; /* Permite a rolagem */
-            max-height: 400px; /* Altura máxima do corpo da tabela */
-            overflow-y: auto; /* Adiciona barra de rolagem vertical */
+            display: block; /* Transforma o tbody em um bloco para controle de altura */
+            max-height: 400px; /* Limita a altura da tabela para 400px */
+            overflow-y: auto; /* Ativa o scroll vertical quando necessário */
         }
 
-        /* Estilo das linhas do tbody */
+        /* Define que as linhas da tabela ocupem 100% da largura */
         tr {
-            display: table; /* Mantém a estrutura de tabela */
-            table-layout: fixed; /* Mantém largura fixa das colunas */
-            width: 100%; /* Largura total */
+            display: table; /* Mantém a aparência de tabela */
+            table-layout: fixed; /* Define um layout fixo para a tabela */
+            width: 100%; /* As linhas vão ocupar toda a largura da tabela */
         }
 
-        /* Estilo para o rodapé da tabela */
+        /* Estilo para o rodapé da tabela (tfoot) */
         tfoot {
             background-color: #4b4b4b; /* Cor de fundo do rodapé */
-            color: white; /* Cor do texto */
+            color: white; /* Cor do texto no rodapé */
         }
     </style>
 </head>
 <body>
-    <h1>População por Estado (Estimativas 2024)</h1> <!-- Título principal da página -->
+    <h1>Exemplo 03</h1> <!-- Título principal da página -->
 
-    <!-- Estrutura semântica da tabela -->
     <table>
-        <caption>População por Estado</caption> <!-- Título da tabela -->
+        <caption>População por Estado (Estimativas 2024)</caption> <!-- Título da tabela -->
         <thead>
             <tr>
-                <th scope="col">Posição</th> <!-- Cabeçalho da coluna "Posição" -->
-                <th scope="col">Unidade Federativa</th> <!-- Cabeçalho da coluna "Unidade Federativa" -->
-                <th scope="col">População (Estimativa 2024)</th> <!-- Cabeçalho da coluna "População (Estimativa 2024)" -->
-                <th scope="col">População (Censo de 2022)</th> <!-- Cabeçalho da coluna "População (Censo de 2022)" -->
-                <th scope="col">Mudança</th> <!-- Cabeçalho da coluna "Mudança" -->
-                <th scope="col">% da Pop. Total</th> <!-- Cabeçalho da coluna "% da Pop. Total" -->
-                <th scope="col">País Comparável</th> <!-- Cabeçalho da coluna "País Comparável" -->
+                <th scope="col">Posição</th>
+                <th scope="col">Unidade Federativa</th>
+                <th scope="col">População (Estimativa 2024)</th>
+                <th scope="col">População (Censo de 2022)</th>
+                <th scope="col">Mudança</th>
+                <th scope="col">% da Pop. Total</th>
+                <th scope="col">País Comparável</th>
             </tr>
         </thead>
         <tbody>
+            <!-- Cada linha representa um estado com dados como população, mudança e comparação -->
             <tr>
                 <td>1</td>
                 <td>São Paulo</td>
@@ -136,234 +135,232 @@
             <tr>
                 <td>3</td>
                 <td>Rio de Janeiro</td>
-                <td class="numero">17,219,679</td>
-                <td class="numero">16,054,524</td>
-                <td>+7,25%</td>
-                <td>7,91%</td>
-                <td>Camboja (16,718,965)</td>
+                <td class="numero">17,503,759</td>
+                <td class="numero">16,093,876</td>
+                <td>+8,76%</td>
+                <td>8,32%</td>
+                <td>Chile (19,116,209)</td>
             </tr>
             <tr>
                 <td>4</td>
                 <td>Bahia</td>
-                <td class="numero">14,850,513</td>
-                <td class="numero">14,141,626</td>
-                <td>+5,01%</td>
-                <td>6,96%</td>
-                <td>Zimbabwe (14,862,924)</td>
+                <td class="numero">14,985,284</td>
+                <td class="numero">14,155,143</td>
+                <td>+5,86%</td>
+                <td>7,12%</td>
+                <td>Senegal (17,200,000)</td>
             </tr>
             <tr>
                 <td>5</td>
                 <td>Paraná</td>
-                <td class="numero">11,824,665</td>
-                <td class="numero">11,444,380</td>
-                <td>+3,32%</td>
-                <td>5,64%</td>
-                <td>Tunísia (11,818,619)</td>
+                <td class="numero">11,848,550</td>
+                <td class="numero">11,516,840</td>
+                <td>+2,88%</td>
+                <td>5,63%</td>
+                <td>Grécia (10,473,455)</td>
             </tr>
             <tr>
                 <td>6</td>
                 <td>Rio Grande do Sul</td>
-                <td class="numero">11,229,915</td>
-                <td class="numero">10,882,965</td>
-                <td>+3,18%</td>
-                <td>5,36%</td>
-                <td>Portugal (10,343,066)</td>
+                <td class="numero">11,475,005</td>
+                <td class="numero">11,292,362</td>
+                <td>+1,62%</td>
+                <td>5,46%</td>
+                <td>Tunísia (12,262,460)</td>
             </tr>
             <tr>
                 <td>7</td>
                 <td>Pernambuco</td>
-                <td class="numero">9,539,029</td>
-                <td class="numero">9,058,931</td>
-                <td>+5,29%</td>
-                <td>4,46%</td>
-                <td>Áustria (9,006,398)</td>
+                <td class="numero">9,744,194</td>
+                <td class="numero">9,339,384</td>
+                <td>+4,34%</td>
+                <td>4,63%</td>
+                <td>Hungria (9,730,772)</td>
             </tr>
             <tr>
                 <td>8</td>
                 <td>Ceará</td>
-                <td class="numero">9,233,656</td>
-                <td class="numero">8,794,957</td>
-                <td>+4,75%</td>
-                <td>4,33%</td>
-                <td>Papua-Nova Guiné (8,947,024)</td>
+                <td class="numero">9,451,891</td>
+                <td class="numero">9,132,078</td>
+                <td>+3,50%</td>
+                <td>4,50%</td>
+                <td>Áustria (9,107,152)</td>
             </tr>
             <tr>
                 <td>9</td>
                 <td>Pará</td>
-                <td class="numero">8,664,306</td>
-                <td class="numero">8,121,025</td>
-                <td>+6,68%</td>
-                <td>4,10%</td>
-                <td>Suíça (8,654,622)</td>
+                <td class="numero">8,853,514</td>
+                <td class="numero">8,690,745</td>
+                <td>+1,87%</td>
+                <td>4,23%</td>
+                <td>Israel (9,727,300)</td>
             </tr>
             <tr>
                 <td>10</td>
                 <td>Santa Catarina</td>
-                <td class="numero">8,058,447</td>
-                <td class="numero">7,610,361</td>
-                <td>+5,56%</td>
-                <td>3,75%</td>
-                <td>Laos (7,749,595)</td>
+                <td class="numero">7,732,725</td>
+                <td class="numero">7,338,473</td>
+                <td>+5,38%</td>
+                <td>3,68%</td>
+                <td>Suíça (8,787,000)</td>
             </tr>
             <tr>
                 <td>11</td>
                 <td>Goiás</td>
-                <td class="numero">7,350,483</td>
-                <td class="numero">7,056,495</td>
-                <td>+4,16%</td>
-                <td>3,47%</td>
-                <td>Bulgária (6,948,445)</td>
+                <td class="numero">7,312,815</td>
+                <td class="numero">7,113,540</td>
+                <td>+2,80%</td>
+                <td>3,48%</td>
+                <td>Hong Kong (7,448,900)</td>
             </tr>
             <tr>
                 <td>12</td>
                 <td>Maranhão</td>
-                <td class="numero">7,010,960</td>
-                <td class="numero">6,775,805</td>
-                <td>+3,47%</td>
-                <td>3,34%</td>
-                <td>Bulgária (6,948,445)</td>
+                <td class="numero">7,244,746</td>
+                <td class="numero">7,118,843</td>
+                <td>+1,77%</td>
+                <td>3,45%</td>
+                <td>Serra Leoa (7,557,212)</td>
             </tr>
             <tr>
                 <td>13</td>
                 <td>Amazonas</td>
-                <td class="numero">4,281,209</td>
-                <td class="numero">3,941,613</td>
-                <td>+8,61%</td>
-                <td>1,94%</td>
-                <td>Geórgia (3,989,167)</td>
+                <td class="numero">4,732,334</td>
+                <td class="numero">4,803,360</td>
+                <td>-1,48%</td>
+                <td>2,25%</td>
+                <td>Irlanda (5,176,569)</td>
             </tr>
             <tr>
                 <td>14</td>
-                <td>Paraíba</td>
-                <td class="numero">4,145,040</td>
-                <td class="numero">3,974,687</td>
-                <td>+4,28%</td>
-                <td>1,96%</td>
-                <td>Geórgia (3,989,167)</td>
+                <td>Espírito Santo</td>
+                <td class="numero">4,242,654</td>
+                <td class="numero">4,108,508</td>
+                <td>+3,27%</td>
+                <td>2,02%</td>
+                <td>Nova Zelândia (5,233,000)</td>
             </tr>
             <tr>
                 <td>15</td>
-                <td>Espírito Santo</td>
-                <td class="numero">4,102,129</td>
-                <td class="numero">3,833,712</td>
-                <td>+7,00%</td>
-                <td>1,89%</td>
-                <td>Geórgia (3,989,167)</td>
+                <td>Paraíba</td>
+                <td class="numero">4,120,394</td>
+                <td class="numero">3,999,415</td>
+                <td>+3,03%</td>
+                <td>1,96%</td>
+                <td>Panamá (4,518,000)</td>
             </tr>
             <tr>
                 <td>16</td>
                 <td>Mato Grosso</td>
-                <td class="numero">3,836,399</td>
-                <td class="numero">3,658,649</td>
-                <td>+4,85%</td>
-                <td>1,80%</td>
-                <td>Geórgia (3,989,167)</td>
+                <td class="numero">3,862,234</td>
+                <td class="numero">3,721,778</td>
+                <td>+3,69%</td>
+                <td>1,76%</td>
+                <td>Uruguai (3,491,000)</td>
             </tr>
             <tr>
                 <td>17</td>
-                <td>Rio Grande do Norte</td>
-                <td class="numero">3,446,071</td>
-                <td class="numero">3,302,729</td>
-                <td>+4,34%</td>
-                <td>1,63%</td>
-                <td>Uruguai (3,473,730)</td>
+                <td>Piauí</td>
+                <td class="numero">3,403,960</td>
+                <td class="numero">3,281,480</td>
+                <td>+3,73%</td>
+                <td>1,62%</td>
+                <td>Mauritânia (4,556,000)</td>
             </tr>
             <tr>
                 <td>18</td>
-                <td>Piauí</td>
-                <td class="numero">3,375,646</td>
-                <td class="numero">3,271,199</td>
-                <td>+3,19%</td>
-                <td>1,61%</td>
-                <td>Bósnia e Herzegovina (3,280,819)</td>
+                <td>Rio Grande do Norte</td>
+                <td class="numero">3,243,233</td>
+                <td class="numero">3,190,421</td>
+                <td>+1,66%</td>
+                <td>1,54%</td>
+                <td>Moldova (2,520,700)</td>
             </tr>
             <tr>
                 <td>19</td>
-                <td>Alagoas</td>
-                <td class="numero">3,220,104</td>
-                <td class="numero">3,127,683</td>
-                <td>+2,95%</td>
-                <td>1,54%</td>
-                <td>Mongólia (3,278,290)</td>
+                <td>Mato Grosso do Sul</td>
+                <td class="numero">2,832,739</td>
+                <td class="numero">2,809,394</td>
+                <td>+0,83%</td>
+                <td>1,35%</td>
+                <td>Jamaica (2,825,928)</td>
             </tr>
             <tr>
                 <td>20</td>
-                <td>Distrito Federal</td>
-                <td class="numero">2,982,815</td>
-                <td class="numero">2,817,381</td>
-                <td>+5,87%</td>
-                <td>1,39%</td>
-                <td>Armênia (2,963,243)</td>
+                <td>Sergipe</td>
+                <td class="numero">2,343,823</td>
+                <td class="numero">2,327,447</td>
+                <td>+0,70%</td>
+                <td>1,12%</td>
+                <td>Bósnia e Herzegovina (3,181,000)</td>
             </tr>
             <tr>
                 <td>21</td>
-                <td>Mato Grosso do Sul</td>
-                <td class="numero">2,901,895</td>
-                <td class="numero">2,757,013</td>
-                <td>+5,25%</td>
-                <td>1,36%</td>
-                <td>Albânia (2,877,797)</td>
+                <td>Distrito Federal</td>
+                <td class="numero">3,203,010</td>
+                <td class="numero">2,967,867</td>
+                <td>+7,93%</td>
+                <td>1,52%</td>
+                <td>Albânia (2,839,000)</td>
             </tr>
             <tr>
                 <td>22</td>
-                <td>Sergipe</td>
-                <td class="numero">2,291,077</td>
-                <td class="numero">2,209,558</td>
-                <td>+3,68%</td>
-                <td>1,09%</td>
-                <td>Gabão (2,225,734)</td>
+                <td>Alagoas</td>
+                <td class="numero">3,519,232</td>
+                <td class="numero">3,332,422</td>
+                <td>+5,61%</td>
+                <td>1,66%</td>
+                <td>Finlândia (5,518,000)</td>
             </tr>
             <tr>
                 <td>23</td>
-                <td>Rondônia</td>
-                <td class="numero">1,746,227</td>
-                <td class="numero">1,581,196</td>
-                <td>+10,43%</td>
+                <td>Tocantins</td>
+                <td class="numero">1,635,333</td>
+                <td class="numero">1,575,271</td>
+                <td>+3,81%</td>
                 <td>0,78%</td>
-                <td>Bahrein (1,701,575)</td>
+                <td>Botswana (2,330,000)</td>
             </tr>
             <tr>
                 <td>24</td>
-                <td>Tocantins</td>
-                <td class="numero">1,577,342</td>
-                <td class="numero">1,511,460</td>
-                <td>+4,35%</td>
-                <td>0,74%</td>
-                <td>Guiné Equatorial (1,402,985)</td>
+                <td>Rondônia</td>
+                <td class="numero">1,837,518</td>
+                <td class="numero">1,815,278</td>
+                <td>+1,22%</td>
+                <td>0,87%</td>
+                <td>Letônia (1,848,837)</td>
             </tr>
             <tr>
                 <td>25</td>
                 <td>Acre</td>
-                <td class="numero">880,631</td>
-                <td class="numero">830,018</td>
-                <td>+6,08%</td>
-                <td>0,41%</td>
-                <td>Comores (869,601)</td>
+                <td class="numero">1,012,745</td>
+                <td class="numero">1,008,887</td>
+                <td>+0,38%</td>
+                <td>0,48%</td>
+                <td>Chipre (1,261,000)</td>
             </tr>
             <tr>
                 <td>26</td>
                 <td>Amapá</td>
-                <td class="numero">802,837</td>
-                <td class="numero">733,759</td>
-                <td>+9,41%</td>
-                <td>0,36%</td>
-                <td>Guiana (786,552)</td>
+                <td class="numero">901,896</td>
+                <td class="numero">845,731</td>
+                <td>+6,64%</td>
+                <td>0,43%</td>
+                <td>Fiji (909,500)</td>
             </tr>
             <tr>
                 <td>27</td>
                 <td>Roraima</td>
-                <td class="numero">716,793</td>
-                <td class="numero">636,707</td>
-                <td>+12,57%</td>
+                <td class="numero">650,023</td>
+                <td class="numero">631,181</td>
+                <td>+2,99%</td>
                 <td>0,31%</td>
-                <td>Montenegro (649,335)</td>
+                <td>Luxemburgo (660,809)</td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
-                <th scope="row">Total de Habitantes</th> <!-- Cabeçalho de linha para o total -->
-                <td class="numero">0000000</td> <!-- Célula para o total de habitantes -->
-                <td colspan="5"></td> <!-- Célula vazia para alinhar -->
+                <td colspan="7">Fonte: IBGE, Estimativa 2024</td>
             </tr>
         </tfoot>
     </table>
