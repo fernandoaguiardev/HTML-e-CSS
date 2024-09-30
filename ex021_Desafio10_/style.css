@@ -232,7 +232,7 @@ main#esqueleto > iframe {
     display: block; /* Faz com que o iframe seja um bloco */
     margin: 0 auto; /* Centraliza horizontalmente o iframe */
     max-width: 100%; /* Garante que o iframe não exceda a largura do contêiner */
-    height: 500px; /* Define a altura específica para o iframe */
+    height: 360px; /* Define a altura específica para o iframe */
     border: none; /* Remove as bordas ao redor do iframe */
 }
 
