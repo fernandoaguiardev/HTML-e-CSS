@@ -141,12 +141,39 @@ main#esqueleto {
 
 /* MEDIA QUERIES */
 
+/* Para dispositivos muito pequenos (menores que 480px, como celulares pequenos) */
+@media (max-width: 480px) {
+
+    /* Ajuste do main para dispositivos pequenos */
+    main#esqueleto {
+        padding-top: 120px; /* Reduz ainda mais o padding-top */
+        margin-left: 5%; /* Reduz as margens para otimizar o espaço */
+        margin-right: 5%;
+    }
+
+    /* Ajuste do título h1 no header */
+    header > h1 {
+        font-size: 16px; /* Reduz o tamanho da fonte do título em telas bem pequenas */
+        padding: 15px 0px 8px 0px; /* Ajusta o padding ao redor do título */
+    }
+
+    /* Ajuste do parágrafo no header */
+    header > p {
+        font-size: 9pt; /* Diminui o tamanho da fonte do parágrafo */
+    }
+
+    /* Ajuste dos links de navegação */
+    header > nav > a {
+        padding: 2px 8px; /* Reduz o padding dos links para caber melhor em telas pequenas */
+    }
+    
+}
 /* Para dispositivos com telas menores que 768px (tablets e celulares) */
 @media (max-width: 768px) {
 
     /* Ajuste do main para telas menores */
     main#esqueleto {
-        padding-top: 100px; /* Reduz o padding-top para telas menores */
+        padding-top: 110px; /* Reduz o padding-top para telas menores */
         margin-left: 10%; /* Reduz as margens laterais para mais espaço útil */
         margin-right: 10%;
     }
@@ -175,33 +202,6 @@ main#esqueleto {
     
 }
 
-/* Para dispositivos muito pequenos (menores que 480px, como celulares pequenos) */
-@media (max-width: 480px) {
-
-    /* Ajuste do main para dispositivos pequenos */
-    main#esqueleto {
-        padding-top: 120px; /* Reduz ainda mais o padding-top */
-        margin-left: 5%; /* Reduz as margens para otimizar o espaço */
-        margin-right: 5%;
-    }
-
-    /* Ajuste do título h1 no header */
-    header > h1 {
-        font-size: 16px; /* Reduz o tamanho da fonte do título em telas bem pequenas */
-        padding: 15px 0px 8px 0px; /* Ajusta o padding ao redor do título */
-    }
-
-    /* Ajuste do parágrafo no header */
-    header > p {
-        font-size: 9pt; /* Diminui o tamanho da fonte do parágrafo */
-    }
-
-    /* Ajuste dos links de navegação */
-    header > nav > a {
-        padding: 2px 8px; /* Reduz o padding dos links para caber melhor em telas pequenas */
-    }
-    
-}
 
 
 main#esqueleto > h1, h2 {
