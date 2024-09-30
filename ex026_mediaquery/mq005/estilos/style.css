@@ -16,13 +16,24 @@ header h1{
     text-align: center;
 }
 span#iburguer{
+    padding: 5px;
+    font-size: 2em;
     color: white;
     background-color: rgb(76, 75, 75);
     display: block;
     text-align: center;
 }
-menu{
+span#iburguer:hover{
+    padding: 5px;
+    font-size: 2em;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     display: block;
+    text-align: center;
+    cursor: pointer;
+}
+menu{
+    display: none;
 }
 menu > ul{
     list-style-type: none;
