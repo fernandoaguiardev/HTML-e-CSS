@@ -32,14 +32,14 @@ As variáveis definidas em :root são usadas para garantir consistência nas cor
 }
 */
 :root{
-    --principal:      #007BFF;
-    --análoga:        #5BC0EB;
-    --complementar:   #FFA500;
+    --principal:      #03396c;
+    --análoga:        #005b96;
+    --complementar:   #6497b1;
     --branco_ajustado:#F8F9FA;
     --preto_ajustado: #343A40;
     --neutra:         #CED4DA;
     
-    --fonte_texto: 'Roboto Mono', Tahoma, sans-serif;
+    --fonte_texto: sans-serif;
     --fonte_titulo: 'Orbitron', Verdana, Geneva, Tahoma, sans-serif;
     --fonte_pixels: 'Android', Verdana, Geneva, Tahoma, sans-serif;
     
@@ -215,7 +215,7 @@ main#esqueleto > h1, h2 {
 
 main#esqueleto > p {
     font-family: var(--fonte_texto); /* Fonte para o texto dos parágrafos */
-    font-size: 14px;
+    font-size: 15px;
     text-indent: 50px; /* Indenta o texto do parágrafo */
     text-align: justify; /* Justifica o texto do parágrafo */
     margin: 5px 25px; /* Margem ao redor dos parágrafos */
@@ -236,20 +236,22 @@ main#esqueleto > iframe {
     border: none; /* Remove as bordas ao redor do iframe */
 }
 
-/* Estilo para o contêiner que contém as listas */
 #container {
-    padding: 20px; /* Padding ao redor do contêiner */
-    display: flex; /* Usa flexbox para layout */
-    justify-content: space-between; /* Distribui as listas uniformemente */
+    padding: 0px;
+    display: flex;
+    justify-content: center; /* Centraliza as listas no contêiner */
+    align-items: center;
+    flex-wrap: wrap; /* Ajusta para quebrar linha se necessário */
 }
 
-#lista1, #lista2 {
-    width: 45%; /* Define a largura das listas */
-    font-family: var(--fonte_texto); /* Fonte para as listas */
+.lista {
+    width: 45%;
+    font-family: var(--fonte_texto);
     font-size: 14px;
-    text-align: justify; /* Justifica o texto das listas */
-    margin: 5px 25px; /* Margem ao redor das listas */
+    text-align: left; /* Alinha o conteúdo das listas à esquerda */
+    padding: 10px;
 }
+
 
 /* Estilo para a seção extra */
 aside#extra {
