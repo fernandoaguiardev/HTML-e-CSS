@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+/*Paleta de cores:*/
+/* 	#328cc1
+    #d98310
+    #083c5d
+    #1d2731
+    #aaaaaa
+
+    https://www.color-hex.com/color-palette/44149
+*/
+:root{
+    --principal:      #328cc1;
+    --análoga:        #083c5d;
+    --complementar:   #d98310;
+    --branco_ajustado:#F8F9FA;
+    --preto_ajustado: #1d2731;
+    --neutra:         #aaaaaa;
+    
+}
