@@ -36,6 +36,9 @@ Breakpoints para dispositivos
         width: 120px;
         padding: 10px;
     }
+    .caixa > input{
+        width: 205px;
+    }
 
 }
 
@@ -66,5 +69,7 @@ Breakpoints para dispositivos
         width: 120px;
         padding: 10px;
     }
-
+    .caixa > input{
+        width: 205px;
+    }
 }

@@ -79,10 +79,10 @@ section div#container_submit{
 
 }
 label{
-    margin-top: 10px;
     background-color: var(--roxo);
     color: var(--pretooadjus);
-    border-radius: 5px;
+    border-radius: 5px 0px 0px 5px;
+    padding: 5px;
 }
 #iconperson, #iconkey{
     color: var(--pretoadjus);
@@ -100,3 +100,13 @@ div#container_submit > input:hover{
     background-color:#37a0f01e;
     color: white;
 }
+.caixa > input{
+    background-color: lightgrey;
+    border: none;
+    padding: 8px;
+    width: 181px;
+    border-radius: 0px 5px 5px 0px;
+    background-color: #ffffff88;
+    transform: translateY(-1px);
+}
+
